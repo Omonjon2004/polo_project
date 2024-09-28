@@ -1,10 +1,10 @@
 from django.db import models
 
+from apps.product.choices import (Color_List, Gender_List, RATING_List,
+                                  Season_List)
+
 # Create your models here.
 
-from django.db import models
-
-from apps.product.choices import Color_List, Gender_List, RATING_List, Season_List
 
 class TimeStampedModel(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
@@ -12,6 +12,7 @@ class TimeStampedModel(models.Model):
 
     class Meta:
         abstract = True
+
 
 class BaseProduct(TimeStampedModel):
     name = models.CharField(max_length=100)
@@ -23,8 +24,6 @@ class BaseProduct(TimeStampedModel):
     sale_count = models.IntegerField(default=0)
     discount = models.FloatField(default=0)
     season = models.CharField(max_length=100, choices=Season_List)
-
-
 
     class Meta:
         abstract = True
