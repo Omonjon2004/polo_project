@@ -1,6 +1,6 @@
 from django.db import models
 from apps.account.models import Users
-from apps.product.models import Bags, Shoes, Dress, Jewelry
+from apps.product.models import Bags, Dress, Jewelry,Shoes
 
 
 class Basket(models.Model):
